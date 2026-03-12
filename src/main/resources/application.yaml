@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: ollama
+  ai:
+    ollama:
+      chat:
+        options:
+          model: llama3.2:latest
