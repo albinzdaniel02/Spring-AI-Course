@@ -31,8 +31,8 @@ public class PromptTemplateController {
 
     @GetMapping("/email")
     public ResponseEntity<String> getEmailResponse(
-            @RequestParam(defaultValue = "How can you help me?") String customerName,
-            @RequestParam(defaultValue = "How can you help me?") String customerMessage) {
+            @RequestParam String customerName,
+            @RequestParam(defaultValue = "What can you do?") String customerMessage) {
 
         String response =
                 chatClient

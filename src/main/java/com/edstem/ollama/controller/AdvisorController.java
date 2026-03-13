@@ -25,7 +25,7 @@ public class AdvisorController {
     }
 
     @GetMapping("/logger")
-    public ResponseEntity<String> getEmailResponse(@RequestParam String message) {
+    public ResponseEntity<String> getResponse(@RequestParam String message) {
 
         String response = chatClient.prompt().user(message).call().content();
         return ResponseEntity.ok(response);

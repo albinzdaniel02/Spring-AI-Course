@@ -23,7 +23,7 @@ public class PromptStuffingController {
     Resource systemPromptTemplate;
 
     @GetMapping("/hr")
-    public ResponseEntity<String> getEmailResponse(@RequestParam String message) {
+    public ResponseEntity<String> getResponse(@RequestParam String message) {
 
         String response =
                 chatClient.prompt().system(systemPromptTemplate).user(message).call().content();
