@@ -6,3 +6,7 @@ spring:
       chat:
         options:
           model: llama3.2:latest
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG

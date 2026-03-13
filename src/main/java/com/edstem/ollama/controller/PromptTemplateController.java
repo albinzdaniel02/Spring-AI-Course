@@ -27,7 +27,7 @@ public class PromptTemplateController {
     }
 
     @Value("classpath:/promptTemplates/userPromptTemplate.st")
-    Resource promptTemplate;
+    Resource userPromptTemplate;
 
     @GetMapping("/email")
     public ResponseEntity<String> getEmailResponse(
@@ -45,7 +45,7 @@ public class PromptTemplateController {
                         .user(
                                 promptUserSpec ->
                                         promptUserSpec
-                                                .text(promptTemplate)
+                                                .text(userPromptTemplate)
                                                 .param("customerName", customerName)
                                                 .param("customerMessage", customerMessage))
                         .call()
