@@ -1,5 +1,7 @@
 package com.edstem.ollama.controller;
 
+import com.edstem.ollama.advisor.TokenUsageAuditAdvisor;
+import java.util.List;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +17,11 @@ public class AdvisorController {
     private final ChatClient chatClient;
 
     public AdvisorController(ChatClient.Builder chatClientBuilder) {
-        this.chatClient = chatClientBuilder.defaultAdvisors(new SimpleLoggerAdvisor()).build();
+        this.chatClient =
+                chatClientBuilder
+                        .defaultAdvisors(
+                                List.of(new SimpleLoggerAdvisor(), new TokenUsageAuditAdvisor()))
+                        .build();
     }
 
     @GetMapping("/logger")
