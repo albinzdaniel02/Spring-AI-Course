@@ -14,8 +14,8 @@ public class StreamController {
 
     private final ChatClient chatClient;
 
-    public StreamController(ChatClient.Builder chatClientBuilder) {
-        this.chatClient = chatClientBuilder.build();
+    public StreamController(ChatClient chatClient) {
+        this.chatClient = chatClient;
     }
 
     // Hit from browser since it's streaming the text instead of waiting for the complete response
