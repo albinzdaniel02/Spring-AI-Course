@@ -6,6 +6,23 @@ spring:
       chat:
         options:
           model: llama3.2:latest
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+            schema: classpath:schema.sql
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: false
+  datasource:
+    url: jdbc:h2:file:./chatmemory
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: admin
 
 logging:
   level:
