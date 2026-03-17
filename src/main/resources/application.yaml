@@ -29,10 +29,10 @@ spring:
     username: admin
     password: admin
 
-  docker:
-    compose:
-      stop:
-        command: down
+#  docker:
+#    compose:
+#      stop:
+#        command: down
 
 logging:
   level:
