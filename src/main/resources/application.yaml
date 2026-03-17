@@ -12,6 +12,11 @@ spring:
           jdbc:
             initialize-schema: always
             schema: classpath:schema.sql
+    vectorstore:
+      qdrant:
+        initialize-schema: true
+        uri: http://localhost:6334
+        collection-name: vectorDocs
   h2:
     console:
       enabled: true
@@ -23,6 +28,11 @@ spring:
     driver-class-name: org.h2.Driver
     username: admin
     password: admin
+
+  docker:
+    compose:
+      stop:
+        command: down
 
 logging:
   level:
